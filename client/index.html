@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BOOK LIST</title>
+
+    <link rel="stylesheet" href="https://bootswatch.com/5/cosmo/bootstrap.min.css">
+</head>
+
+<body>
+    <h1 align="center"><svg xmlns="http://www.w3.org/2000/svg" width="50px" height="100px" fill="currentColor" class="bi bi-book-half" viewBox="0 0 16 16"color="red">
+        <path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+      </svg>MY BOOK LIST</h1>
+    <div class="container">
+        <hr>
+        <h1 align="center">Add A Book</h1>
+        <hr>
+
+       
+
+        <form action="http://localhost:3000/book" method="POST">
+            <div class="form-group">
+                <label for="exampleInputPassword1">ISBN</label>
+                <input class="form-control" name="isbn">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Title</label>
+                <input class="form-control" name="title">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Author</label>
+                <input class="form-control" name="author">
+            </div><br>
+
+            
+
+            
+           
+            <button type="submit" class="btn btn-primary" style="width:1100px">Add</button>
+        </form>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+               <a > <button class="btn btn-primary" onclick="showbooks()">BOOK LIST</button> </a>
+            </div>
+            <div class="col-md-9"></div>
+        </div>
+    </div>
+	 <div style="display:none" id="hide">
+    <div class="container">
+        <hr>
+        <h1 align="center">List Of Books</h1>
+        <hr>
+        <div class="row" style="margin-top: 20px">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <input class="form-control" id="bookName">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-primary" data-toggle="modal" 
+                    data-target="#deleteBookModal" onClick="searchBook()">SEARCH</button>
+                <a href="index.html"> <button class="btn btn-primary">ADD BOOK</button> </a>
+            </div><br><br>
+        </div>
+
+        <div>
+            <div class="row" id="books">
+			 <table class="table table-striped mt-5" id="list">
+					 <thead>
+					 <tr>
+					 <th style= "width:25%">ISBN</th>
+					 <th style= "width:25%">TITLE</th>
+					 <th style= "width:25%">AUTHOR </th>
+					 <th style= "width:25%">ACTION</th>
+                     
+						 </tr>
+					 </thead>
+					 </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="editBookModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Book</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                        <form id="editForm" method="POST">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">ISBN</label>
+                                <input class="form-control" name="isbn" id="isbn">
+                            </div>
+                
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Title</label>
+                                <input class="form-control" name="title" id="title">
+                            </div>
+                
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Author</label>
+                                <input class="form-control" name="author" id="author">
+                            </div>
+                
+                            
+                
+                            
+                
+                
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="book-list.js"></script>
+    </div>
+</body>
+
+
+</html>
